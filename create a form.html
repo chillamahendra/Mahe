@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/form%202.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a form</title>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+<body>
+    <h1><center>form</center></h1>
+    First Name:<input type="name" placeholder="enter your first name"><br><br>
+    Last Name name:<input type="name" placeholder="enter your last name"><br><br>
+    Email ID:<input type="mail" placeholder="enter your Email id="><br><br>
+    password:<label from="pass">password</label>
+    <input type="pass" name="password" placeholder="password"><br><br>
+
+    <label form="number">phone no</label>
+    <input type="number" placeholder="enter your phone number"><br><br>
+
+    <label type="DOB">DOB</label>
+    <input type="date" name="DOB"><br><br>
+
+    gender:<input type="radio" name="gender" value="male">male
+    <input type="radio" name="gender" value="female">femal
+    <input type="radio" name="gender" value="other">other<br><br>
+    <input type="range" name="range"><br><br>
+    <select name="states">
+        <option value="AP">AP</option>
+        <option value="TS">TS</option>
+        <option value="active">active</option>
+        <option value="tata">tata</option>
+        <option value="maharatra">maharatra</option>    
+    </select><br><br>
+    <optgroup label="re">
+        <option value="re">AP&gt;bulets</option>
+        <option value="actva">activa</option>
+        <option value="active">active</option>
+        <option value="tata">tata</option>
+        <option value="maharatra">maharatra</option>    
+    </optgroup><br><br>
+    <button type="reset">reset</button>
+    <button type="submit">submit</button>
+</body></html>
